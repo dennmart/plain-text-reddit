@@ -35,7 +35,8 @@ async function getTopSubredditPosts(subreddit: string): Promise<PostData[]> {
   );
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch posts: ${res.body}`);
+    const responseText = await res.text();
+    throw new Error(`Failed to fetch posts: ${responseText}`);
   }
 
   const posts: RedditResponse = await res.json();
