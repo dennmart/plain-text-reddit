@@ -26,7 +26,7 @@ export async function generateMetadata({
 
 async function getTopSubredditPosts(subreddit: string): Promise<PostData[]> {
   const res = await fetch(
-    `https://www.reddit.com/r/${subreddit}/top.json?t=week&limit=50`,
+    `https://old.reddit.com/r/${subreddit}/top.json?t=week&limit=50`,
     {
       headers: {
         "User-Agent": "Plain Text Reddit/0.1",
